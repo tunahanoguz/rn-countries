@@ -1,6 +1,10 @@
 import React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
-import { HomeScreen, CountriesScreen } from '../../screens';
+import {
+  HomeScreen,
+  CountriesScreen,
+  CountryDetailScreen,
+} from '../../screens';
 
 function HomeNavigation() {
   const Stack = createStackNavigator();
@@ -15,6 +19,11 @@ function HomeNavigation() {
       <Stack.Screen
         name="CountriesScreen"
         component={CountriesScreen}
+        options={{ headerShown: false }}
+      />
+      <Stack.Screen
+        name="CountryDetailScreen"
+        component={CountryDetailScreen}
         options={{ headerShown: false }}
       />
     </Stack.Navigator>
