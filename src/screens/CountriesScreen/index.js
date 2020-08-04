@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { Text, ActivityIndicator } from 'react-native';
-import { ScreenSafeContainer } from '../../components';
+import { FlatList, Text, ActivityIndicator } from 'react-native';
+import { ScreenSafeContainer, CountryItem } from '../../components';
 import { fetchAllCountries } from '../../axiosInstance';
 
 function CountriesScreen() {
@@ -14,7 +14,17 @@ function CountriesScreen() {
   }, []);
 
   if (countries.length !== 0) {
-    return <ScreenSafeContainer>{console.log(countries)}</ScreenSafeContainer>;
+    return (
+      <ScreenSafeContainer style={{ padding: 0 }}>
+        <FlatList
+          data={countries}
+          renderItem={({ item }) => (
+            <CountryItem code={item.alpha3Code} name={item.name} />
+          )}
+          keyExtractor={(item, index) => index.toString()}
+        />
+      </ScreenSafeContainer>
+    );
   } else if (error !== '') {
     return (
       <ScreenSafeContainer>
