@@ -1,9 +1,11 @@
 import React from 'react';
-import { View } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
 import styles from './styles';
 
 function ScreenSafeContainer({ children, style }) {
-  return <View style={[styles.container, style]}>{children}</View>;
+  return (
+    <SafeAreaView style={[styles.container, style]}>{children}</SafeAreaView>
+  );
 }
 
 export default ScreenSafeContainer;
