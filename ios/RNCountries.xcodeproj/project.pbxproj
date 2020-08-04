@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		00E356F31AD99517003FC87E /* RNCountriesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* RNCountriesTests.m */; };
 		06637C1824D966D20017E136 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 06637C1724D966D20017E136 /* GoogleService-Info.plist */; };
+		06E1FF2F24D99A88008B1D4B /* Feather.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 06E1FF1F24D99A88008B1D4B /* Feather.ttf */; };
 		0CF762A263B69AA2B39B4C8E /* libPods-RNCountries-tvOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 20F9C28CD946D2BB5BBFD492 /* libPods-RNCountries-tvOSTests.a */; };
 		13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
@@ -47,6 +48,7 @@
 		00E356F21AD99517003FC87E /* RNCountriesTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RNCountriesTests.m; sourceTree = "<group>"; };
 		06637C1724D966D20017E136 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		06B2FB9E390105B5D070CFD3 /* Pods-RNCountries.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RNCountries.release.xcconfig"; path = "Target Support Files/Pods-RNCountries/Pods-RNCountries.release.xcconfig"; sourceTree = "<group>"; };
+		06E1FF1F24D99A88008B1D4B /* Feather.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Feather.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Feather.ttf"; sourceTree = "<group>"; };
 		0BFCE1C0DBF2CF968C9390AD /* libPods-RNCountries-tvOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-RNCountries-tvOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0E42F7D0E16046B98728CB17 /* Pods-RNCountries-tvOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RNCountries-tvOS.release.xcconfig"; path = "Target Support Files/Pods-RNCountries-tvOS/Pods-RNCountries-tvOS.release.xcconfig"; sourceTree = "<group>"; };
 		13B07F961A680F5B00A75B9A /* RNCountries.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RNCountries.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -124,9 +126,18 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		06E1FF3424D99AD1008B1D4B /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				06E1FF1F24D99A88008B1D4B /* Feather.ttf */,
+			);
+			name = Fonts;
+			sourceTree = "<group>";
+		};
 		13B07FAE1A68108700A75B9A /* RNCountries */ = {
 			isa = PBXGroup;
 			children = (
+				06E1FF3424D99AD1008B1D4B /* Fonts */,
 				06637C1724D966D20017E136 /* GoogleService-Info.plist */,
 				008F07F21AC5B25A0029DE68 /* main.jsbundle */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
@@ -343,6 +354,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				06E1FF2F24D99A88008B1D4B /* Feather.ttf in Resources */,
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				06637C1824D966D20017E136 /* GoogleService-Info.plist in Resources */,
