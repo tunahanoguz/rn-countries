@@ -1,7 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { FlatList, Text, ActivityIndicator } from 'react-native';
-import { ScreenSafeContainer, CountryItem } from '../../components';
+import {
+  ScreenSafeContainer,
+  ScreenHeader,
+  CountryItem,
+} from '../../components';
 import { fetchAllCountries } from '../../axiosInstance';
+import ScreenContainer from '../../components/ScreenContainer';
 
 function CountriesScreen() {
   const [countries, setCountries] = useState([]);
@@ -16,6 +21,7 @@ function CountriesScreen() {
   if (countries.length !== 0) {
     return (
       <ScreenSafeContainer style={{ padding: 0 }}>
+        <ScreenHeader title="Countries" isExistPadding={true} />
         <FlatList
           data={countries}
           renderItem={({ item }) => (
