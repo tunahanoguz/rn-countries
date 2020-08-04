@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "370936315473",
+    "firebase_url": "https://countries-list-65edf.firebaseio.com",
+    "project_id": "countries-list-65edf",
+    "storage_bucket": "countries-list-65edf.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:370936315473:android:98c56ccfd2e833a6630270",
+        "android_client_info": {
+          "package_name": "com.rncountries"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "370936315473-qdgvijlgu8s0qk4fqoumm7rbqcv0qo5e.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB3vCDBdnpGpTrT3vzGgCbVPlxpdKzU9kQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "370936315473-qdgvijlgu8s0qk4fqoumm7rbqcv0qo5e.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
