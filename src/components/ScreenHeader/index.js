@@ -6,7 +6,7 @@ import Icon from 'react-native-vector-icons/Feather';
 import ScreenTitle from '../ScreenTitle';
 import styles from './styles';
 
-function ScreenHeader({ title }) {
+function ScreenHeader({ title, isExistPadding }) {
   const navigation = useNavigation();
 
   function goBack() {
@@ -14,7 +14,9 @@ function ScreenHeader({ title }) {
   }
 
   return (
-    <TouchableOpacity style={styles.container} onPress={goBack}>
+    <TouchableOpacity
+      style={[styles.container, isExistPadding && { paddingHorizontal: 30 }]}
+      onPress={goBack}>
       <ScreenTitle>{title}</ScreenTitle>
       <Icon name="arrow-left" size={26} />
     </TouchableOpacity>
@@ -23,6 +25,11 @@ function ScreenHeader({ title }) {
 
 ScreenHeader.propTypes = {
   title: PropTypes.string.isRequired,
+  isExistPadding: PropTypes.bool,
+};
+
+ScreenHeader.defaultProps = {
+  isExistPadding: false,
 };
 
 export default ScreenHeader;
