@@ -9,8 +9,9 @@ function HomeButton({ text, firstColor, secondColor, func }) {
     <LinearGradient
       start={{ x: 0, y: 0 }}
       end={{ x: 1, y: 0 }}
-      colors={[firstColor, secondColor]}>
-      <TouchableOpacity onPress={func}>
+      colors={[firstColor, secondColor]}
+      style={styles.container}>
+      <TouchableOpacity onPress={func} style={styles.button}>
         <Text style={styles.text}>{text}</Text>
       </TouchableOpacity>
     </LinearGradient>
