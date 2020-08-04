@@ -1,9 +1,12 @@
 import React from 'react';
 import { TouchableOpacity, View, Text } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
 import PropTypes from 'prop-types';
 import styles from './styles';
 
-function CountryItem({ navigation, code, name }) {
+function CountryItem({ code, name }) {
+  const navigation = useNavigation();
+
   function goToCountryDetail() {
     navigation.navigate('Home', {
       screen: 'CountryDetailScreen',
