@@ -3,11 +3,13 @@ import { StyleSheet } from 'react-native';
 const styles = StyleSheet.create({
   item: {
     flexDirection: 'row',
-    // justifyContent: 'space-between',
+    paddingVertical: 10,
+    paddingHorizontal: 30,
+    borderBottomWidth: 1,
+    borderBottomColor: 'rgba(0, 0, 0, 0.05)',
   },
   flagContainer: {
-    width: 100,
-    height: 100,
+    borderRadius: 8,
   },
   flag: {
     flex: 1,
