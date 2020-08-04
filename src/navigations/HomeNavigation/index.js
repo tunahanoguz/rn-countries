@@ -7,8 +7,16 @@ function HomeNavigation() {
 
   return (
     <Stack.Navigator initialRouteName="HomeScreen">
-      <Stack.Screen name="HomeScreen" component={HomeScreen} />
-      <Stack.Screen name="CountriesScreen" component={CountriesScreen} />
+      <Stack.Screen
+        name="HomeScreen"
+        component={HomeScreen}
+        options={{ headerShown: false }}
+      />
+      <Stack.Screen
+        name="CountriesScreen"
+        component={CountriesScreen}
+        options={{ headerShown: false }}
+      />
     </Stack.Navigator>
   );
 }
