@@ -8,4 +8,5 @@ export DetailItem from './DetailItem';
 export QuizQuestion from './QuizQuestion';
 export SettingsItem from './SettingsItem';
 export BlockButton from './BlockButton';
+export Input from './Input';
 export AuthScreenBottomButton from './AuthScreenBottomButton';
