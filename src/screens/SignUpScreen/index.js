@@ -57,7 +57,7 @@ function SignUpScreen({ navigation }) {
   }
 
   function goToSignInScreen() {
-    navigation.navigate('Auth', { screen: 'SignInScreen' });
+    navigation.navigate('SignInScreen');
   }
 
   return (

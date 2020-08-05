@@ -23,7 +23,7 @@ function SignInScreen({ navigation }) {
   }
 
   function goToSignUpScreen() {
-    navigation.navigate('Auth', { screen: 'SignUpScreen' });
+    navigation.navigate('SignUpScreen');
   }
 
   return (
