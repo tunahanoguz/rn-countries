@@ -10,7 +10,6 @@ function TabNavigation() {
     <Tab.Navigator>
       <Tab.Screen name="Home" component={HomeNavigation} />
       <Tab.Screen name="Settings" component={SettingsNavigation} />
-      <Tab.Screen name="Settings" component={SettingsNavigation} />
     </Tab.Navigator>
   );
 }
