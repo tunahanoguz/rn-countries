@@ -27,6 +27,7 @@ function SettingsItem({ title, settings, state, setSettingState }) {
             </View>
           </View>
         )}
+        keyExtractor={(item, index) => `${title}-${index.toString()}`}
       />
     </View>
   );
