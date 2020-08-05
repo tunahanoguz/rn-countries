@@ -2,5 +2,7 @@ export HomeButtonContainer from './HomeButtonContainer';
 export HomeButton from './HomeButton';
 export ScreenSafeContainer from './ScreenSafeContainer';
 export CountryItem from './CountryItem';
+export ScreenTitle from './ScreenTitle';
 export ScreenHeader from './ScreenHeader';
 export DetailItem from './DetailItem';
+export QuizQuestion from './QuizQuestion';
