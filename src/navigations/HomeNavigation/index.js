@@ -4,6 +4,7 @@ import {
   HomeScreen,
   CountriesScreen,
   CountryDetailScreen,
+  QuizScreen,
 } from '../../screens';
 
 function HomeNavigation() {
@@ -24,6 +25,11 @@ function HomeNavigation() {
       <Stack.Screen
         name="CountryDetailScreen"
         component={CountryDetailScreen}
+        options={{ headerShown: false }}
+      />
+      <Stack.Screen
+        name="QuizScreen"
+        component={QuizScreen}
         options={{ headerShown: false }}
       />
     </Stack.Navigator>
