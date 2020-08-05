@@ -6,3 +6,4 @@ export ScreenTitle from './ScreenTitle';
 export ScreenHeader from './ScreenHeader';
 export DetailItem from './DetailItem';
 export QuizQuestion from './QuizQuestion';
+export SettingsItem from './SettingsItem';
