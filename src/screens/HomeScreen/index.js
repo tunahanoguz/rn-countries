@@ -1,14 +1,27 @@
 import React from 'react';
+import { getStatusBarHeight } from 'react-native-status-bar-height';
+import auth from '@react-native-firebase/auth';
 import { ScreenSafeContainer, HomeButton } from '../../components';
 import HomeButtonContainer from '../../components/HomeButtonContainer';
 
 function HomeScreen({ navigation }) {
+  const statusBarHeight = getStatusBarHeight();
+
   function goToCountriesScreen() {
     navigation.navigate('Home', { screen: 'CountriesScreen' });
   }
 
+  function goToTestScreen() {
+    navigation.navigate('Home', { screen: 'QuizScreen' });
+  }
+
+  function signOut() {
+    auth().signOut();
+  }
+
   return (
-    <ScreenSafeContainer style={{ justifyContent: 'space-between' }}>
+    <ScreenSafeContainer
+      style={{ justifyContent: 'space-between', marginTop: statusBarHeight }}>
       <HomeButtonContainer>
         <HomeButton
           text="Show countries"
@@ -23,7 +36,7 @@ function HomeScreen({ navigation }) {
           text="Show scores"
           firstColor="#2af598"
           secondColor="#009efd"
-          func={goToCountriesScreen}
+          func={goToTestScreen}
         />
       </HomeButtonContainer>
 
@@ -41,7 +54,7 @@ function HomeScreen({ navigation }) {
           text="Sign Out"
           firstColor="#ff0844"
           secondColor="#ffb199"
-          func={goToCountriesScreen}
+          func={signOut}
         />
       </HomeButtonContainer>
     </ScreenSafeContainer>
