@@ -1,11 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import {
-  View,
-  ScrollView,
-  Text,
-  ActivityIndicator,
-  Dimensions,
-} from 'react-native';
+import { View, ScrollView, Text, ActivityIndicator, Image } from 'react-native';
 import axios from 'axios';
 import { getStatusBarHeight } from 'react-native-status-bar-height';
 import { SvgXml } from 'react-native-svg';
@@ -90,13 +84,33 @@ function CountryDetailScreen({ route }) {
         showsVerticalScrollIndicator={false}>
         <ScreenHeader title={country.name} isExistPadding={true} />
 
-        {flag !== '' && (
-          <View style={{ height: 280 }}>
-            <SvgXml xml={flag} width="100%" />
-          </View>
+        {/*{flag !== '' && (*/}
+        {/*  <View style={{ height: 280 }}>*/}
+        {/*    <SvgXml xml={flag} width="100%" />*/}
+        {/*  </View>*/}
+        {/*)}*/}
+
+        {/*{fetchFlag()}*/}
+
+        {console.log(
+          `https://www.countryflags.io/${country.topLevelDomain[0].substr(
+            1,
+          )}/64.png`,
         )}
 
-        {fetchFlag()}
+        <Image
+          source={{
+            uri: `https://www.countryflags.io/${country.topLevelDomain[0].substr(
+              1,
+            )}/flat/64.png`,
+          }}
+          style={{
+            alignSelf: 'center',
+            width: 128,
+            height: 128,
+            marginTop: -30,
+          }}
+        />
 
         <DetailItem
           scoreTitle="Native Name"
