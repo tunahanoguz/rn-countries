@@ -321,6 +321,9 @@ PODS:
     - boost-for-react-native
     - DoubleConversion
     - glog
+  - GCDWebServer (3.5.4):
+    - GCDWebServer/Core (= 3.5.4)
+  - GCDWebServer/Core (3.5.4)
   - glog (0.3.5)
   - GoogleDataTransport (7.1.0):
     - nanopb (~> 1.30905.0)
@@ -604,6 +607,9 @@ PODS:
     - React-Core (= 0.63.2)
     - React-cxxreact (= 0.63.2)
     - React-jsi (= 0.63.2)
+  - RealmJS (6.0.4):
+    - GCDWebServer
+    - React
   - RNCMaskedView (0.1.10):
     - React
   - RNFBApp (8.3.0):
@@ -624,6 +630,8 @@ PODS:
   - RNScreens (2.9.0):
     - React
   - RNSVG (12.1.0):
+    - React
+  - RNVectorIcons (7.0.0):
     - React
   - Yoga (1.14.0)
   - YogaKit (1.18.1):
@@ -679,6 +687,7 @@ DEPENDENCIES:
   - React-RCTText (from `../node_modules/react-native/Libraries/Text`)
   - React-RCTVibration (from `../node_modules/react-native/Libraries/Vibration`)
   - ReactCommon/turbomodule/core (from `../node_modules/react-native/ReactCommon`)
+  - RealmJS (from `../node_modules/realm`)
   - "RNCMaskedView (from `../node_modules/@react-native-community/masked-view`)"
   - "RNFBApp (from `../node_modules/@react-native-firebase/app`)"
   - "RNFBAuth (from `../node_modules/@react-native-firebase/auth`)"
@@ -687,6 +696,7 @@ DEPENDENCIES:
   - RNReanimated (from `../node_modules/react-native-reanimated`)
   - RNScreens (from `../node_modules/react-native-screens`)
   - RNSVG (from `../node_modules/react-native-svg`)
+  - RNVectorIcons (from `../node_modules/react-native-vector-icons`)
   - Yoga (from `../node_modules/react-native/ReactCommon/yoga`)
 
 SPEC REPOS:
@@ -708,6 +718,7 @@ SPEC REPOS:
     - Flipper-PeerTalk
     - Flipper-RSocket
     - FlipperKit
+    - GCDWebServer
     - GoogleDataTransport
     - GoogleUtilities
     - "gRPC-C++"
@@ -776,6 +787,8 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native/Libraries/Vibration"
   ReactCommon:
     :path: "../node_modules/react-native/ReactCommon"
+  RealmJS:
+    :path: "../node_modules/realm"
   RNCMaskedView:
     :path: "../node_modules/@react-native-community/masked-view"
   RNFBApp:
@@ -792,6 +805,8 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native-screens"
   RNSVG:
     :path: "../node_modules/react-native-svg"
+  RNVectorIcons:
+    :path: "../node_modules/react-native-vector-icons"
   Yoga:
     :path: "../node_modules/react-native/ReactCommon/yoga"
 
@@ -818,6 +833,7 @@ SPEC CHECKSUMS:
   Flipper-RSocket: 64e7431a55835eb953b0bf984ef3b90ae9fdddd7
   FlipperKit: bc68102cd4952a258a23c9c1b316c7bec1fecf83
   Folly: b73c3869541e86821df3c387eb0af5f65addfab4
+  GCDWebServer: 2c156a56c8226e2d5c0c3f208a3621ccffbe3ce4
   glog: 40a13f7840415b9a77023fbcae0f1e6f43192af3
   GoogleDataTransport: af0c79193dc59acd37630b4833d0dc6912ae6bd5
   GoogleUtilities: e121a3867449ce16b0e35ddf1797ea7a389ffdf2
@@ -850,6 +866,7 @@ SPEC CHECKSUMS:
   React-RCTText: 1b6773e776e4b33f90468c20fe3b16ca3e224bb8
   React-RCTVibration: 4d2e726957f4087449739b595f107c0d4b6c2d2d
   ReactCommon: a0a1edbebcac5e91338371b72ffc66aa822792ce
+  RealmJS: 085f4e44ee1de3a98e9c8c6b8c2a11b527beba9d
   RNCMaskedView: f5c7d14d6847b7b44853f7acb6284c1da30a3459
   RNFBApp: d55b3a69d199cff25ecf4f3bf41a86c47aa37d57
   RNFBAuth: 8cdec65b3c88e8f5b2aa0109d8cbfbaaa73fb379
@@ -858,6 +875,7 @@ SPEC CHECKSUMS:
   RNReanimated: c2bb7438b57a3d987bb2e4e6e4bca94787e30b02
   RNScreens: c526239bbe0e957b988dacc8d75ac94ec9cb19da
   RNSVG: ce9d996113475209013317e48b05c21ee988d42e
+  RNVectorIcons: da6fe858f5a65d7bbc3379540a889b0b12aa5976
   Yoga: 7740b94929bbacbddda59bf115b5317e9a161598
   YogaKit: f782866e155069a2cca2517aafea43200b01fd5a
 
