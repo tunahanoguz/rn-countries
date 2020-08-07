@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { View, Text, TouchableOpacity } from 'react-native';
 import PropTypes from 'prop-types';
 import styles from './styles';
@@ -11,22 +11,63 @@ function QuizQuestion({
   setCurrentQuestion,
   setCurrentCountry,
 }) {
+  const [selectedAnswer, setSelectedAnswer] = useState(5);
+  const [isSelected, setIsSelected] = useState(false);
+
   return (
     <View>
       <Text style={styles.question}>{question}</Text>
 
-      {options.map((option) => (
+      {options.map((option, index) => (
         <TouchableOpacity
           key={option.key}
-          style={styles.optionContainer}
+          style={[
+            styles.optionContainer,
+            (answer === index) === selectedAnswer && {
+              backgroundColor: 'green',
+            },
+          ]}
           onPress={() => {
             setAnswer((oldAnswers) => [...oldAnswers, option.key]);
-            setCurrentQuestion((oldCurrentQuestion) => oldCurrentQuestion + 1);
+            setTimeout(
+              () =>
+                setCurrentQuestion(
+                  (oldCurrentQuestion) => oldCurrentQuestion + 1,
+                ),
+              500,
+            );
             setCurrentCountry(Math.floor(Math.random() * 250));
+            setSelectedAnswer(index);
+            setIsSelected(true);
           }}>
           <Text>{option.text}</Text>
         </TouchableOpacity>
       ))}
+
+      {isSelected &&
+        (answer === selectedAnswer ? (
+          <View
+            style={{
+              justifyContent: 'center',
+              alignItems: 'center',
+              marginTop: 10,
+              padding: 30,
+              backgroundColor: 'green',
+            }}>
+            <Text style={{ color: 'white' }}>Correct!</Text>
+          </View>
+        ) : (
+          <View
+            style={{
+              justifyContent: 'center',
+              alignItems: 'center',
+              marginTop: 10,
+              padding: 30,
+              backgroundColor: 'red',
+            }}>
+            <Text style={{ color: 'white' }}>Wrong!</Text>
+          </View>
+        ))}
     </View>
   );
 }
