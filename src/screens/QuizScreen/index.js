@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { View, Text, Alert, ActivityIndicator } from 'react-native';
+import { Text, Alert, ActivityIndicator } from 'react-native';
 import {
   ScreenSafeContainer,
   ScreenTitle,
@@ -14,6 +14,7 @@ import {
   createCurrencyQuestion,
   createFlagQuestion,
 } from './functions';
+import { saveOnlineGame, saveOfflineGame } from '../../db';
 
 function QuizScreen({ navigation }) {
   const [countries, setCountries] = useState([]);
@@ -34,11 +35,33 @@ function QuizScreen({ navigation }) {
   }
 
   function showFinishAlert() {
+    saveGame();
     Alert.alert(
       'Game over!',
       `Game is over. Your correct answer number is: ${correctAnswersCount}`,
       [{ text: 'Finish', onPress: goToHomeScreen }],
     );
+  }
+
+  function saveGame() {
+    const userEmail = auth().currentUser.email;
+    const usersCollection = firestore().collection('Users');
+
+    usersCollection
+      .where('email', '==', userEmail)
+      .get()
+      .then((userDocs) => {
+        const userDoc = userDocs.docs[0];
+        const userData = userDoc.data();
+
+        const userGameType = userData.gameType;
+
+        if (userGameType === 0) {
+          saveOnlineGame(correctAnswersCount);
+        } else {
+          saveOfflineGame(correctAnswersCount);
+        }
+      });
   }
 
   function setQuizQuestion(createdQuestion, type = 0) {
