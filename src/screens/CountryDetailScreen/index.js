@@ -84,20 +84,6 @@ function CountryDetailScreen({ route }) {
         showsVerticalScrollIndicator={false}>
         <ScreenHeader title={country.name} isExistPadding={true} />
 
-        {/*{flag !== '' && (*/}
-        {/*  <View style={{ height: 280 }}>*/}
-        {/*    <SvgXml xml={flag} width="100%" />*/}
-        {/*  </View>*/}
-        {/*)}*/}
-
-        {/*{fetchFlag()}*/}
-
-        {console.log(
-          `https://www.countryflags.io/${country.topLevelDomain[0].substr(
-            1,
-          )}/64.png`,
-        )}
-
         <Image
           source={{
             uri: `https://www.countryflags.io/${country.topLevelDomain[0].substr(
