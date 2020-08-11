@@ -2,6 +2,7 @@ import React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Icon from 'react-native-vector-icons/Feather';
 import HomeNavigation from '../HomeNavigation';
+import ScoreNavigation from '../ScoreNavigation';
 import SettingsNavigation from '../SettingsNavigation';
 
 function TabNavigation() {
@@ -27,6 +28,17 @@ function TabNavigation() {
           tabBarVisible: getTabBarVisibility(route),
         })}
       />
+
+      <Tab.Screen
+        name="Scores"
+        component={ScoreNavigation}
+        options={{
+          tabBarIcon: ({ color, size }) => (
+            <Icon name="activity" color={color} size={size} />
+          ),
+        }}
+      />
+
       <Tab.Screen
         name="Settings"
         component={SettingsNavigation}
