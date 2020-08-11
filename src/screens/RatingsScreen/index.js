@@ -64,10 +64,8 @@ function RatingsScreen({ navigation }) {
           renderItem={({ item, index }) => (
             <RatingItem
               key={item.id}
-              index={index}
-              ratingID={item.id}
               playerUsername={users[index]?.username}
-              totalScore={item.scores.score}
+              totalScore={item.score}
               date={moment(item.data).format('LL')}
             />
           )}
