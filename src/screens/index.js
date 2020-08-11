@@ -8,3 +8,4 @@ export SignUpScreen from './SignUpScreen';
 export ScoresScreen from './ScoresScreen';
 export OfflineScoresScreen from './OfflineScoresScreen';
 export OnlineScoresScreen from './OnlineScoresScreen';
+export RatingsScreen from './RatingsScreen';
