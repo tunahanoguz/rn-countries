@@ -3,6 +3,7 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Icon from 'react-native-vector-icons/Feather';
 import HomeNavigation from '../HomeNavigation';
 import ScoreNavigation from '../ScoreNavigation';
+import RatingNavigation from '../RatingNavigation';
 import SettingsNavigation from '../SettingsNavigation';
 
 function TabNavigation() {
@@ -35,6 +36,16 @@ function TabNavigation() {
         options={{
           tabBarIcon: ({ color, size }) => (
             <Icon name="activity" color={color} size={size} />
+          ),
+        }}
+      />
+
+      <Tab.Screen
+        name="Ratings"
+        component={RatingNavigation}
+        options={{
+          tabBarIcon: ({ color, size }) => (
+            <Icon name="trending-up" color={color} size={size} />
           ),
         }}
       />
