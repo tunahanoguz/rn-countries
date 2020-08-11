@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { ScrollView, Alert } from 'react-native';
+import { Alert } from 'react-native';
 import auth from '@react-native-firebase/auth';
 import firestore from '@react-native-firebase/firestore';
 import {
@@ -13,44 +13,43 @@ function SettingsScreen() {
   const [gameType, setGameType] = useState(0);
   const [gameLevel, setGameLevel] = useState(0);
 
-  // const userEmail = auth().currentUser.email;
+  const userEmail = auth().currentUser.email;
 
-  // useEffect(() => {
-  //   firestore()
-  //     .collection('Users')
-  //     .where('email', '==', userEmail)
-  //     .get()
-  //     .then((querySnapshot) => {
-  //       querySnapshot.forEach((doc) => {
-  //         const data = doc.data();
-  //         const userGameType = data.gameType;
-  //         const userGameLevel = data.gameLevel;
-  //
-  //         setGameType(userGameType);
-  //         setGameLevel(userGameLevel);
-  //       });
-  //     })
-  //     .catch((error) => console.log(error));
-  // }, []);
-  //
-  // function saveSettings() {
-  //   const scoreRef = firestore()
-  //     .collection('Users')
-  //     .where('email', '==', userEmail)
-  //     .limit(1);
-  //   scoreRef.get().then((userDocs) => {
-  //     const userDoc = userDocs.docs[0];
-  //     userDoc.ref
-  //       .update({
-  //         gameType,
-  //         gameLevel,
-  //         colorMode,
-  //       })
-  //       .then(() => {
-  //         Alert.alert('Successful!', 'Settings have been successfully saved.');
-  //       });
-  //   });
-  // }
+  useEffect(() => {
+    firestore()
+      .collection('Users')
+      .where('email', '==', userEmail)
+      .get()
+      .then((querySnapshot) => {
+        querySnapshot.forEach((doc) => {
+          const data = doc.data();
+          const userGameType = data.gameType;
+          const userGameLevel = data.gameLevel;
+
+          setGameType(userGameType);
+          setGameLevel(userGameLevel);
+        });
+      })
+      .catch((error) => console.log(error));
+  }, []);
+
+  function saveSettings() {
+    const scoreRef = firestore()
+      .collection('Users')
+      .where('email', '==', userEmail)
+      .limit(1);
+    scoreRef.get().then((userDocs) => {
+      const userDoc = userDocs.docs[0];
+      userDoc.ref
+        .update({
+          gameType,
+          gameLevel,
+        })
+        .then(() => {
+          Alert.alert('Successful!', 'Settings have been successfully saved.');
+        });
+    });
+  }
 
   return (
     <ScreenSafeContainer>
@@ -107,7 +106,7 @@ function SettingsScreen() {
         setSettingState={setGameLevel}
       />
 
-      <BlockButton func={() => console.log('Save!')}>Save</BlockButton>
+      <BlockButton func={saveSettings}>Save</BlockButton>
     </ScreenSafeContainer>
   );
 }
