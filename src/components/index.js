@@ -12,3 +12,4 @@ export SettingsItem from './SettingsItem';
 export BlockButton from './BlockButton';
 export Input from './Input';
 export AuthScreenBottomButton from './AuthScreenBottomButton';
+export RatingItem from './RatingItem';
