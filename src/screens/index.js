@@ -5,3 +5,6 @@ export QuizScreen from './QuizScreen';
 export SettingsScreen from './SettingsScreen';
 export SignInScreen from './SignInScreen';
 export SignUpScreen from './SignUpScreen';
+export ScoresScreen from './ScoresScreen';
+export OfflineScoresScreen from './OfflineScoresScreen';
+export OnlineScoresScreen from './OnlineScoresScreen';
