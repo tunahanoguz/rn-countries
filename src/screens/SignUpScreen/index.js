@@ -18,15 +18,15 @@ function SignUpScreen({ navigation }) {
   function signUp() {
     auth()
       .createUserWithEmailAndPassword(email, password)
-      .then(async () => {
+      .then(async (user) => {
         try {
           const userData = {
+            id: user.user.uid,
             username,
             email,
             createdAt: new Date(),
             gameType: 0,
             gameLevel: 2,
-            // colorMode: 'Light Mode',
           };
           const userCollection = firestore().collection('Users');
           await userCollection.add(userData);
