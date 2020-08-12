@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { View, FlatList } from 'react-native';
+import { View, FlatList, Text } from 'react-native';
 import firestore from '@react-native-firebase/firestore';
 import moment from 'moment';
 import {
@@ -58,23 +58,27 @@ function RatingsScreen({ navigation }) {
 
       <View style={{ height: 10 }} />
 
-      {scores.length !== 0 && users.length !== 0 && (
-        <FlatList
-          data={scores}
-          renderItem={({ item, index }) => (
-            <RatingItem
-              key={item.id}
-              playerUsername={users[index]?.username}
-              totalScore={item.score}
-              date={moment(item.data).format('LL')}
-            />
-          )}
-        />
+      {scores.length !== 0 && users.length !== 0 ? (
+        <>
+          <FlatList
+            data={scores}
+            renderItem={({ item, index }) => (
+              <RatingItem
+                key={item.id}
+                playerUsername={users[index]?.username}
+                totalScore={item.score}
+                date={moment(item.data).format('LL')}
+              />
+            )}
+          />
+
+          <View style={{ height: 10 }} />
+
+          <BlockButton func={goToAllRatings}>See More</BlockButton>
+        </>
+      ) : (
+        <Text>There is no rating yet.</Text>
       )}
-
-      <View style={{ height: 10 }} />
-
-      <BlockButton func={goToAllRatings}>See More</BlockButton>
     </ScreenSafeContainer>
   );
 }
