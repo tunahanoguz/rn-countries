@@ -25,11 +25,15 @@ function QuizScreen({ navigation }) {
   const [correctAnswersCount, setCorrectAnswersCount] = useState(0);
 
   useEffect(() => {
+    let isMounted = true;
     if (countries.length === 0) {
       fetchAllCountries()
         .then((countries) => setCountries(countries))
         .catch((err) => setError(err));
     }
+    return () => {
+      isMounted = false;
+    };
   }, []);
 
   function goToHomeScreen() {
