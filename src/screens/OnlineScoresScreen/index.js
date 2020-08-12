@@ -29,10 +29,9 @@ function OnlineScoresScreen() {
           setScores((sc) => [...sc, score]);
         });
       })
-      .catch((error) => {
-        console.log(error);
-        Alert.alert('Scores cannot be fetched!', error.message);
-      });
+      .catch((error) =>
+        Alert.alert('Scores cannot be fetched!', error.message),
+      );
   }
 
   return (
