@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Text, Alert, ActivityIndicator } from 'react-native';
+import auth from '@react-native-firebase/auth';
+import firestore from '@react-native-firebase/firestore';
 import {
   ScreenSafeContainer,
   ScreenTitle,
