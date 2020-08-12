@@ -21,7 +21,7 @@ function RatingsScreen({ navigation }) {
     firestore()
       .collection('Scores')
       .where('gameType', '==', 0)
-      .orderBy('scores.score', 'desc')
+      .orderBy('score', 'desc')
       .limit(5)
       .get()
       .then((querySnapshot) => {

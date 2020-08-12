@@ -17,7 +17,7 @@ function OnlineScoresScreen() {
       .collection('Scores')
       .where('gameType', '==', 0)
       .where('userID', '==', userID)
-      .orderBy('scores.score', 'desc')
+      .orderBy('score', 'desc')
       .get()
       .then((querySnapshot) => {
         querySnapshot.forEach((doc) => {
