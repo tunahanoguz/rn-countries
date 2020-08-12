@@ -1,34 +1,28 @@
 import React from 'react';
-import { View, Text, FlatList, TouchableOpacity } from 'react-native';
+import { View, Text, TouchableOpacity } from 'react-native';
 import PropTypes from 'prop-types';
 import styles from './styles';
-import { SafeAreaView } from 'react-native-safe-area-context';
 
 function SettingsItem({ title, settings, state, setSettingState }) {
   return (
     <View style={styles.item}>
       <Text style={styles.itemTitle}>{title}</Text>
-
-      <FlatList
-        data={settings}
-        renderItem={({ item, index }) => (
-          <View style={styles.settingItem} key={index}>
-            <View style={styles.leftSettingItem}>
-              <Text style={styles.settingTitle}>{item.title}</Text>
-              <Text style={styles.settingDescription}>{item.description}</Text>
-            </View>
-
-            <View style={styles.rightSettingItem}>
-              <TouchableOpacity
-                style={styles.checkCircleOuter}
-                onPress={() => setSettingState(index)}>
-                {state === index && <View style={styles.checkCircleInner} />}
-              </TouchableOpacity>
-            </View>
+      {settings.map((setting, index) => (
+        <View style={styles.settingItem} key={title + index}>
+          <View style={styles.leftSettingItem}>
+            <Text style={styles.settingTitle}>{setting.title}</Text>
+            <Text style={styles.settingDescription}>{setting.description}</Text>
           </View>
-        )}
-        keyExtractor={(item, index) => `${title}-${index.toString()}`}
-      />
+
+          <View style={styles.rightSettingItem}>
+            <TouchableOpacity
+              style={styles.checkCircleOuter}
+              onPress={() => setSettingState(index)}>
+              {state === index && <View style={styles.checkCircleInner} />}
+            </TouchableOpacity>
+          </View>
+        </View>
+      ))}
     </View>
   );
 }
