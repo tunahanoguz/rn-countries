@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { ScrollView } from 'react-native';
 import { Alert } from 'react-native';
 import auth from '@react-native-firebase/auth';
 import firestore from '@react-native-firebase/firestore';
@@ -52,62 +53,64 @@ function SettingsScreen() {
   }
 
   return (
-    <ScreenSafeContainer>
-      <ScreenTitle>Settings</ScreenTitle>
+    <ScrollView>
+      <ScreenSafeContainer>
+        <ScreenTitle>Settings</ScreenTitle>
 
-      <SettingsItem
-        title="Game Type"
-        settings={[
-          {
-            title: 'Online',
-            description:
-              'The scores obtained are recorded for competitive purposes. Requires internet.',
-          },
-          {
-            title: 'Offline',
-            description:
-              'The scores obtained are stored in local memory. No internet required.',
-          },
-        ]}
-        state={gameType}
-        setSettingState={setGameType}
-      />
+        <SettingsItem
+          title="Game Type"
+          settings={[
+            {
+              title: 'Online',
+              description:
+                'The scores obtained are recorded for competitive purposes. Requires internet.',
+            },
+            {
+              title: 'Offline',
+              description:
+                'The scores obtained are stored in local memory. No internet required.',
+            },
+          ]}
+          state={gameType}
+          setSettingState={setGameType}
+        />
 
-      <SettingsItem
-        title="Game Level"
-        settings={[
-          {
-            title: 'Very Easy',
-            description:
-              'The location and type of coins change every three second.',
-          },
-          {
-            title: 'Easy',
-            description:
-              'The location and type of coins change every two second.',
-          },
-          {
-            title: 'Medium',
-            description:
-              'The location and type of coins change every one second.',
-          },
-          {
-            title: 'Hard',
-            description:
-              'The location and type of coins change every half second.',
-          },
-          {
-            title: 'Very Hard',
-            description:
-              'The location and type of coins change every quarter second.',
-          },
-        ]}
-        state={gameLevel}
-        setSettingState={setGameLevel}
-      />
+        <SettingsItem
+          title="Game Level"
+          settings={[
+            {
+              title: 'Very Easy',
+              description:
+                'The location and type of coins change every three second.',
+            },
+            {
+              title: 'Easy',
+              description:
+                'The location and type of coins change every two second.',
+            },
+            {
+              title: 'Medium',
+              description:
+                'The location and type of coins change every one second.',
+            },
+            {
+              title: 'Hard',
+              description:
+                'The location and type of coins change every half second.',
+            },
+            {
+              title: 'Very Hard',
+              description:
+                'The location and type of coins change every quarter second.',
+            },
+          ]}
+          state={gameLevel}
+          setSettingState={setGameLevel}
+        />
 
-      <BlockButton func={saveSettings}>Save</BlockButton>
-    </ScreenSafeContainer>
+        <BlockButton func={saveSettings}>Save</BlockButton>
+      </ScreenSafeContainer>
+    </ScrollView>
   );
 }
 
