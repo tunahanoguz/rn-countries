@@ -33,7 +33,7 @@ function HomeScreen({ navigation }) {
 
       <HomeButtonContainer>
         <HomeButton
-          text="Show scores"
+          text="New Quiz"
           firstColor="#2af598"
           secondColor="#009efd"
           func={goToTestScreen}
